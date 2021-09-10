@@ -42,7 +42,7 @@
 	<update id="incViewCnt" flushCache="true">
 		UPDATE test_write
 		SET wr_viewcnt = wr_viewcnt + 1
-		WHERE wr_uid = #{param0}
+		WHERE wr_uid = #{param1} <!-- 수정 param0 -> param1 -->
 	</update>
 	
 	<!--  글 수정 -->
@@ -57,7 +57,7 @@
 	
 	<!--  글 삭제 -->
 	<delete id="deleteByUid" flushCache="true">
-		DELETE FROM test_write WHERE uid = #{uid}
+		DELETE FROM test_write WHERE wr_uid = #{uid} <!-- WHERE uid -> WHERE wr_uid -->
 	</delete>
 	
 </mapper> 
